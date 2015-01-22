@@ -11,7 +11,7 @@ export default function tHelper() {
 
   var view = options.data.view;
   var container = view.container;
-  var t = container.lookup('utils:t');
+  var t = container.lookup('utils:i18n');
   var application = container.lookup('application:main');
   var types = options.types;
 
