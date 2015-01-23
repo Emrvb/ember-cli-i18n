@@ -2,6 +2,7 @@ import Ember from 'ember';
 import T from 'ember-cli-i18n/utils/t';
 import tHelper from '../helpers/t';
 import Stream from 'ember-cli-i18n/utils/stream';
+import Namespace from 'ember-cli-i18n/namespace';
 
 export function initialize(container, application) {
 	if(application.I18N_HELPER===undefined) {
@@ -22,6 +23,8 @@ export function initialize(container, application) {
 	application.inject('model', application.I18N_HELPER, 'utils:i18n');
 	application.inject('component', application.I18N_HELPER, 'utils:i18n');
 	application.inject('controller', application.I18N_HELPER, 'utils:i18n');
+	
+	Ember.I18n=Namespace.create({container:container});
 };
 
 export default {
